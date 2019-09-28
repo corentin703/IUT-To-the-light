@@ -1,0 +1,1 @@
+IL y a toutes les textures de faites avec pas besoin de les retoucher ^^
