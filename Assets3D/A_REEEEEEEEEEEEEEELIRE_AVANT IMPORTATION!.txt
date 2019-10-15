@@ -1,0 +1,3 @@
+Les textures ne sont pas encore faites sur certain modèles, si vous en trouvez sans dîtes le moi dans ce fichier, merci
+
+Il ne faut pas importer comme des bouriins, il faut prendre les FBX et pas les MAya sinon ça ne marche pas logique puisque Unity ne possède pas d'extension MAYA
