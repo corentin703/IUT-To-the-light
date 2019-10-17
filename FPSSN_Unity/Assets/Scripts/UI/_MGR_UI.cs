@@ -21,6 +21,11 @@ public class _MGR_UI : MonoBehaviour
     [SerializeField]
     private GameObject UI_PopUpPannel;
 
+    [SerializeField]
+    private GameObject UI_RessourcesPannel;
+    //[SerializeField]
+    //private Canvas UI_RessourcesViewportContent;
+
     private Text UI_PopUp_Text;
 
     void Awake()
@@ -38,6 +43,23 @@ public class _MGR_UI : MonoBehaviour
     {
         updateTimeLeft();
         updateScore();
+
+        if (Input.GetKeyDown(KeyCode.F1))
+            ShowRessourcesMenu();
+
+    }
+
+    private void ShowRessourcesMenu()
+    {
+        if (UI_RessourcesPannel.activeSelf)
+        {
+            UI_RessourcesPannel.SetActive(false);
+        }
+
+        //UI_RessourcesViewportConten
+
+
+
     }
 
     public void ShowPopUp(string content)
