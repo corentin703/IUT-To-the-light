@@ -78,11 +78,15 @@ public class _MGR_SceneManager : MonoBehaviour
             SceneManager.LoadScene(_nom_scene_verifié); 
         else
             CommonDevTools.QUIT_APP("! Erreur de référence de scène !");
-
-        // SceneManager.LoadScene(p_list_Scenes[p_list_Scenes.IndexOf(__scene_name)]);
-        //SceneManager.LoadScene(p_arr_Scenes[System.Array.IndexOf(p_arr_Scenes,__scene_name)]);
     }
 
+
+    public void Reboot()
+    {
+        _MGR_UI.Instance.Resume();
+        Destroy(GameObject.Find("_EGO_preload_init"));
+        LoadScene(0);
+    }
 
 
     public void FinDePartie(FIN_DE_PARTIE __fin)

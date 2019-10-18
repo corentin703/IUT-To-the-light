@@ -257,13 +257,13 @@ public class _MGR_TimeLine : MonoBehaviour {
     public void Pause()
     {
         PauseChrono();
-        Time.timeScale = 0;
+        Time.timeScale = 0f;
     }
 
     public void Resume()
     {
-        Time.timeScale = 1;
         ReprendreChrono();
+        Time.timeScale = 1f;
     }
 
     public  void FinDePartie() {
