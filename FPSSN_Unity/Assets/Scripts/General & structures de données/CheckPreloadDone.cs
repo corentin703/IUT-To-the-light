@@ -8,9 +8,9 @@ public class CheckPreloadDone : MonoBehaviour {
     // si ce n'est pas le cas : chargement de la scène PRE LOAD ...
     // ce qui permet d'exécuter proprement l'application depuis n'importe quelle scène dans l'IDE editor d'Unity.
     void Awake()
-        {
-            GameObject check = GameObject.Find("_EGO_preload_init");
-            if (check == null)
-                    UnityEngine.SceneManagement.SceneManager.LoadScene("_preload"); 
-        }
+    {
+        GameObject check = GameObject.Find("_EGO_preload_init");
+        if (check == null)
+                UnityEngine.SceneManagement.SceneManager.LoadScene("_preload");
+    }
 }

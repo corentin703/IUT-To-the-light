@@ -10,7 +10,6 @@ public class _MGR_SceneManager : MonoBehaviour
     private static _MGR_SceneManager p_instance = null  ;              //Static instance of GameManager which allows it to be accessed by any other script.
     public static _MGR_SceneManager Instance { get { return p_instance; } }
 
-
     private  uint                       p_nbScenes;
     public   uint                       NbScenes { get { return p_nbScenes; } }    // modificateur privé : n'apparaît pas dans l'IDE
 
@@ -46,7 +45,6 @@ public class _MGR_SceneManager : MonoBehaviour
             p_arr_Scenes[p_nbScenes]= _scene_name;                 // la scène sera accessible avec son indice 
             p_nbScenes++;
 
-
             p_list_Scenes.Add(_scene_name);              // la scène sera accessible avec son indice 
             p_dict_Scenes.Add(_scene_name, _scene_name); // la scène sera accessible avec son NOM
         }
@@ -63,8 +61,6 @@ public class _MGR_SceneManager : MonoBehaviour
             SceneManager.LoadScene(p_arr_Scenes[__num_scene]);
        // SceneManager.LoadScene(p_list_Scenes[i]);
        // pour les dictionnaires  pas vraiment adapté  car indexé par clé  (ici chaine) 
-       
-
     }
 
     //Launch one scene by name

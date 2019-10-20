@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class _MGR_GamePlay : MonoBehaviour {
 
@@ -17,6 +18,8 @@ public class _MGR_GamePlay : MonoBehaviour {
     public uint score { get; private set; }
     public Bonus[] tabBonus;
     Dictionary<string, int> p_dicBonus;
+
+    public FirstPersonController player { get; private set; }
 
     // Use this for initialization
     void Awake()
@@ -38,6 +41,17 @@ public class _MGR_GamePlay : MonoBehaviour {
 
         foreach (Bonus _bonus in tabBonus)
             p_dicBonus.Add(_bonus.nom, _bonus.bonus);
+
+        player = null;
+    }
+
+    public void SetPlayer(FirstPersonController playerObj)
+    {
+        if (player == null)
+            player = playerObj;
+        else
+            throw new System.Exception("Player can't be assigned more than once");
+
     }
 
     public void StartPlay()
