@@ -31,10 +31,10 @@ public class _MGR_UI : MonoBehaviour
     {
         if (isInitialized)
         {
-            if (Input.GetKeyDown(KeyCode.Tab))
+            if (Input.GetKeyDown(KeyCode.Tab) && m_UI_RessourcesPannel != null)
                 ShowRessources();
 
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) && m_UI_PausePannel != null)
                 Pause();
 
             updateTimeLeft();
