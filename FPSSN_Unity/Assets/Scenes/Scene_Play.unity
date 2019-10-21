@@ -2191,7 +2191,7 @@ GameObject:
   - component: {fileID: 490926343}
   - component: {fileID: 490926342}
   m_Layer: 5
-  m_Name: RessourceBarItem (1)
+  m_Name: RessourceBarItem2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3103,7 +3103,7 @@ GameObject:
   - component: {fileID: 728315358}
   - component: {fileID: 728315357}
   m_Layer: 5
-  m_Name: RessourceBarItem (4)
+  m_Name: RessourceBarItem5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5583,7 +5583,7 @@ GameObject:
   - component: {fileID: 1451121723}
   - component: {fileID: 1451121722}
   m_Layer: 5
-  m_Name: RessourceBarItem
+  m_Name: RessourceBarItem1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6322,7 +6322,7 @@ GameObject:
   - component: {fileID: 1642949288}
   - component: {fileID: 1642949287}
   m_Layer: 5
-  m_Name: RessourceBarItem (2)
+  m_Name: RessourceBarItem3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6584,7 +6584,7 @@ GameObject:
   - component: {fileID: 1736294684}
   - component: {fileID: 1736294683}
   m_Layer: 5
-  m_Name: RessourceBarItem (3)
+  m_Name: RessourceBarItem4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6723,6 +6723,7 @@ GameObject:
   - component: {fileID: 1771744061}
   - component: {fileID: 1771744063}
   - component: {fileID: 1771744062}
+  - component: {fileID: 1771744064}
   m_Layer: 5
   m_Name: RessourceBar
   m_TagString: Untagged
@@ -6790,6 +6791,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771744060}
   m_CullTransparentMesh: 0
+--- !u!114 &1771744064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771744060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d4d9eb3e4e9b545a148b62e4c5acd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slots: []
 --- !u!1 &1773614304
 GameObject:
   m_ObjectHideFlags: 0
