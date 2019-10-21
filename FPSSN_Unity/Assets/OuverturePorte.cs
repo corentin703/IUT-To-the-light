@@ -4,22 +4,18 @@ using UnityEngine;
 
 public class OuverturePorte : MonoBehaviour
 {
-    Animation myAnim;
-    GameObject Porte;
-    BoxCollider ColliderASupprimer;
+    private Animator Anim;
 
-    void Start()
+    private void Start()
     {
-        myAnim = Porte.GetComponent<Animation>();
-        ColliderASupprimer = Porte.GetComponent<BoxCollider>();
+        Anim = GameObject.Find("Porte").GetComponent<Animator>();
     }
-
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if( other.tag == "Player" && Input.GetKeyDown(KeyCode.E))
-        {
-            myAnim.Play();
-            ColliderASupprimer.enabled = !ColliderASupprimer.enabled;
-        }
+        Anim.SetBool("open", true);
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        Anim.SetBool("open", false);
     }
 }
