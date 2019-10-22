@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 95000012944575982}
   - component: {fileID: 4465198859936796257}
   - component: {fileID: 5034702693083666385}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: TimsAssets_Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f058b5792f8784db11ee24355f0926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickDistance: 10000
+  pickDistance: 5
   gameObjectsNeeded: []
   isOpened: 0
 --- !u!1 &1000010487714768
