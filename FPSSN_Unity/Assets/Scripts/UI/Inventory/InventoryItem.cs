@@ -5,18 +5,26 @@ using UnityEngine.UI;
 
 public class InventoryItem : MonoBehaviour
 {
-    [SerializeField] private Image icon;
+    [SerializeField] Image icon;
     [SerializeField] private Text itemName;
     [SerializeField] private Text description;
-    [SerializeField] private Text number;
+    //[SerializeField] private Text number;
 
 
-    public InventoryItem(string sName, string sDescription, int iNumber, Sprite icon)
+    //public InventoryItem(string sName, string sDescription, int iNumber, Sprite icon)
+    //{
+    //    this.icon.sprite = icon;
+    //    itemName.text = sName;
+    //    description.text = sDescription;
+    //    number.text = iNumber.ToString();
+    //}
+
+    public void SetItemInfos(string sName, string sDescription, int iNumber, Sprite icon)
     {
         this.icon.sprite = icon;
-        itemName.text = sName;
+        itemName.text = sName + " x" + iNumber.ToString();
         description.text = sDescription;
-        number.text = iNumber.ToString();
+        //number.text = iNumber.ToString();
     }
 
 }

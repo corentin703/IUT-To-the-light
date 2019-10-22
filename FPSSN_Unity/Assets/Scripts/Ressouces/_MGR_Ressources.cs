@@ -22,6 +22,17 @@ public class _MGR_Ressources : MonoBehaviour
             p_instance = this;
         else if (p_instance != this)
             Destroy(gameObject);
+
+        lRessources = new List<Ressource>();
+    }
+
+    void Start()
+    {
+        lRessources.Add(new Ressource("Machin", "Super machin", 1, null));
+        lRessources.Add(new Ressource("Chose", "Super moche", 11, null));
+        lRessources.Add(new Ressource("Nutella", "Super bon", 4, null));
+        lRessources.Add(new Ressource("Truc", "Super pratique", 9, null));
+        lRessources.Add(new Ressource("Objet spécial", "Super spécial", 5, null));
     }
 
     public bool IsUsingRessource(out Ressource ressource)

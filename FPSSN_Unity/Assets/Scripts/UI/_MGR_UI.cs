@@ -89,6 +89,9 @@ public class _MGR_UI : MonoBehaviour
 
     public void ShowRessources()
     {
+        m_UI_RessourcesPannel.GetComponent<InventoryMenu>().Actualize();
+        print("Salut");
+
         _MGR_GamePlay.Instance.player.LockCursor(false);
         m_UI_RessourcesPannel.SetActive(true);
         _MGR_TimeLine.Instance.Pause();
