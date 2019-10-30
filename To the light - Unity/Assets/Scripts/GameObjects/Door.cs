@@ -6,7 +6,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     [SerializeField] private float pickDistance = 5;
-    /*[SerializeField]*/ private LayerMask layerMask;
+    private LayerMask layerMask;
 
     private Animator animator;
 
@@ -24,6 +24,7 @@ public class Door : MonoBehaviour
         isOpened = animator.GetBool("isOpened");
 
         layerMask = LayerMask.GetMask("Toggable");
+        gameObject.layer = layerMask;
     }
 
     void Update()
@@ -38,7 +39,7 @@ public class Door : MonoBehaviour
                 {
                     if (hitInfo.transform.gameObject == gameObject)
                     {
-                        Debug.Log("Opening a door");
+                        //Debug.Log("Opening a door");
                         isOpened = !isOpened;
                         animator.SetBool("isOpened", isOpened);
                     }

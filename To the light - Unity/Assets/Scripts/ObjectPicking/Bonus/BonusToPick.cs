@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class BonusToPick : PickableObject
 {
-    public override void Pick()
+    protected override void PickAction()
     {
-        base.Pick();
         _MGR_GamePlay.Instance.IncreaseScore(this.gameObject.tag);
 
         print(_MGR_GamePlay.Instance.score);
+
+        base.PickAction();
     }
 }

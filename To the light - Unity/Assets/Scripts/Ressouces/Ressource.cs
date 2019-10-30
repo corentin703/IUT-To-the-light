@@ -38,9 +38,9 @@ public class Ressource : PickableObject
         resNumber += num;
     }
 
-    public override void Pick()
+    protected override void PickAction()
     {
         _MGR_Ressources.Instance.AddRessource(this);
-        base.Pick();
+        gameObject.SetActive(false);
     }
 }

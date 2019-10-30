@@ -7,9 +7,13 @@ public class PickableObject : MonoBehaviour
 {
     [SerializeField]
     private bool isPickableByClick = true;
+    [SerializeField]
+    private float clickPickDistance = 5;
 
     [SerializeField]
     private bool isPickableByObjectPicker = true;
+
+    private LayerMask layerMask;
 
     public bool IsPickableByClick()
     {
@@ -21,17 +25,24 @@ public class PickableObject : MonoBehaviour
         return isPickableByObjectPicker;
     }
 
+    void Start()
+    {
+        string layerName = "L_PickableObject";
+
+        gameObject.layer = LayerMask.NameToLayer(layerName);
+        layerMask = LayerMask.GetMask(layerName);
+    }
+
     void Update()
     {
-        if (isPickableByClick && testMousePicking())
-            print("");
-            
-        
+        if (isPickableByClick && Input.GetKeyDown(KeyCode.Mouse0) && testMousePicking())
+            PickAction();
     }
 
     public void Pick()
     {
-        PickAction();
+        if (isPickableByObjectPicker)
+            PickAction();
     }
 
     protected virtual void PickAction()
@@ -50,9 +61,9 @@ public class PickableObject : MonoBehaviour
         {
             RaycastHit hitInfo = new RaycastHit();
 
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, pickDistance, layer_mask))
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, clickPickDistance, layerMask))
             {
-                if (hitInfo.transform.parent.gameObject == gameObject)
+                if (hitInfo.transform.gameObject == gameObject)
                 {
                     return true;
                 }
