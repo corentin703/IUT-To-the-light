@@ -13,7 +13,6 @@ public class _MGR_Ressources : MonoBehaviour
 
     [HideInInspector]
     private Ressource m_ressourceInUse;
-    //public Ressource ressourceInUse { get; private set; }
 
     void Awake()
     {
@@ -28,11 +27,7 @@ public class _MGR_Ressources : MonoBehaviour
 
     void Start()
     {
-        lRessources.Add(new Ressource("Machin", "Super machin", 1, null));
-        lRessources.Add(new Ressource("Chose", "Super moche", 11, null));
-        lRessources.Add(new Ressource("Nutella", "Super bon", 4, null));
-        lRessources.Add(new Ressource("Truc", "Super pratique", 9, null));
-        lRessources.Add(new Ressource("Objet spécial", "Super spécial", 5, null));
+
     }
 
     public bool IsUsingRessource(out Ressource ressource)
@@ -61,7 +56,7 @@ public class _MGR_Ressources : MonoBehaviour
     {
         foreach (Ressource element in lRessources)
         {
-            if (element.name == ressource.name)
+            if (element.GetName() == ressource.GetName())
             {
                 // Incrémente le nombre de la ressource de 1 si une ressource du même nom à déjà été prise
                 element.Add();

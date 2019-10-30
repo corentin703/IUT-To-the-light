@@ -24,7 +24,7 @@ public class InventoryMenu : MonoBehaviour
         foreach (Ressource ressource in _MGR_Ressources.Instance.lRessources)
         {
             print("2");
-            if (m_dInventoryItem.ContainsKey(ressource))
+            if (!m_dInventoryItem.ContainsKey(ressource))
             {
                 print("OK");
                 GameObject item = GameObject.Find("RessourceItem");
@@ -32,9 +32,14 @@ public class InventoryMenu : MonoBehaviour
                 Instantiate(item, gameObject.transform);
             }
 
-            m_dInventoryItem[ressource].SetItemInfos(ressource.name, ressource.sDescription, ressource.iNumber, ressource.icon);
+            m_dInventoryItem[ressource].SetItemInfos(ressource.GetName(), ressource.GetDescription(), ressource.GetNumber());
         }
 
         m_scrollbar.numberOfSteps = m_dInventoryItem.Count;
+    }
+
+    public void Close()
+    {
+        _MGR_UI.Instance.CloseRessources();
     }
 }

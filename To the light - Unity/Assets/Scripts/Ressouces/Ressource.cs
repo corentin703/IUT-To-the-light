@@ -1,28 +1,46 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
-public  class Ressource : MonoBehaviour
+public class Ressource : PickableObject
 {
-    public string sName { get; private set; }
-    public string sDescription { get; private set; }
+    [SerializeField]
+    private string resName;
+    [SerializeField]
+    private string resDescription;
 
-    public int iNumber { get; private set; }
+    [SerializeField]
+    private int resNumber = 1;
 
-    public Sprite icon { get; private set; }
+    //[SerializeField]
+    //private Sprite resIcon;
     
-
-    public Ressource(string sName, string sDescription, int iNumber, Sprite icon)
+    public string GetName()
     {
-        this.sName = sName;
-        this.sDescription = sDescription;
-        this.iNumber = iNumber;
-        this.icon = icon;
+        return resName;
     }
+
+    public string GetDescription()
+    {
+        return resDescription;
+    }
+
+    public int GetNumber()
+    {
+        return resNumber;
+    }
+
+    //public Sprite GetIcon()
+    //{
+    //    return resIcon;
+    //}
 
     public void Add(int num = 1)
     {
-        iNumber += num;
+        resNumber += num;
+    }
+
+    public override void Pick()
+    {
+        _MGR_Ressources.Instance.AddRessource(this);
+        base.Pick();
     }
 }
