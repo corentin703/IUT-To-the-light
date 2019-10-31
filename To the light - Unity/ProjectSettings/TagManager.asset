@@ -4,8 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - BonusCoin_50
-  - BonusCoin_10
+  - Door_Corridor
   layers:
   - Default
   - TransparentFX

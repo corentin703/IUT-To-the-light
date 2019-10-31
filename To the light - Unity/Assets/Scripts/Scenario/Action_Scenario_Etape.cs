@@ -12,20 +12,6 @@ public abstract class Action_Scenario_Etape : MonoBehaviour {
     [HideInInspector]
     public bool isPartOf_Scenario = false;
 
-
-    [System.Serializable]
-    public struct EndStepSound
-    {
-        public AudioClip audioClip;
-        public bool disableSong;
-
-        public EndStepSound(AudioClip audioClip = null, bool disableSong = false) { this.audioClip = audioClip; this.disableSong = disableSong; }
-    }
-
-    [SerializeField]
-    protected EndStepSound endStepSound;
-
-
     // cette fonction est définie ici à minima et peut être suffisante
     // ou peu nécessiter d'être redéfinie ("overrided") dans la classe fille
     // possibilité de compléter ce code en commencant la méthodes redéfinie par base.Start(); ....
@@ -34,21 +20,7 @@ public abstract class Action_Scenario_Etape : MonoBehaviour {
         etape_suivante_déjà_déclenchée = false;
     }
 
-    virtual protected void PlayEndStepSound()
-    {
-        // Ajoute le son de mise en inventaire
-        GameObject pickingSound = new GameObject();
-        pickingSound.AddComponent<AudioSource>();
-        pickingSound.GetComponent<AudioSource>().clip = (endStepSound.audioClip == null) ? _MGR_ScenarioManager.Instance.defaultEndStepSound : endStepSound.audioClip;
-        pickingSound.GetComponent<AudioSource>().Play();
-        pickingSound.name = "EndStepSound";
-
-        // Détruit le GO à la fin du son
-        Destroy(pickingSound, pickingSound.GetComponent<AudioSource>().clip.length);
-    }
-
-
-    // cette fonction ne peut être définie dan cette class mère trop générale
+    // cette fonction ne peut être définie dans cette class mère trop générale
     // elle doit obligatoirement être définie dans les classes filles
     abstract public void Update();
 
@@ -57,10 +29,6 @@ public abstract class Action_Scenario_Etape : MonoBehaviour {
     // ou peu nécessiter d'être redéfinie ("overrided") dans la classe fille
     virtual public void Declencher_Etape_Suivante_Du_Scenario()
     {
-        if (!endStepSound.disableSong)
-            PlayEndStepSound();
-
-
         if (isPartOf_Scenario)
         {
             if (!etape_suivante_déjà_déclenchée)

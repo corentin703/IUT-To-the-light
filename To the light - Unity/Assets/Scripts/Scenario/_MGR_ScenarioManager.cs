@@ -10,8 +10,6 @@ public class _MGR_ScenarioManager : MonoBehaviour
 
     public   uint   nbEtapes { get; private set; }
 
-    public AudioClip defaultEndStepSound { get; private set; }
-
     private  int   p_num_etapeEnCours;
     private Scenario_Etape p_etapeEnCours;
     private GameObject ojet_etape_en_cours;
@@ -47,8 +45,6 @@ public class _MGR_ScenarioManager : MonoBehaviour
         else
             p_etapes = new List<Scenario_Etape>(); // 1ere exécution : instantiation
         nbEtapes = 0;
-
-        this.defaultEndStepSound = defaultEndStepSound;
 
         foreach (Scenario_Etape _etape in __etapes_du_scenario)
         {

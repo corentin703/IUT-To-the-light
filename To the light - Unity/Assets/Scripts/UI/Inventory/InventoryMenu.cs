@@ -38,10 +38,13 @@ public class InventoryMenu : MonoBehaviour, IScrollHandler
     {
         foreach (Ressource ressource in _MGR_Ressources.Instance.lRessources)
         {
+            Debug.Log("1");
             if (!m_dInventoryItem.ContainsKey(ressource))
             {
+                Debug.Log("2");
                 GameObject item = Instantiate(templateItem, viewport.transform);
                 m_dInventoryItem.Add(ressource, item.GetComponent<InventoryItem>());
+                Debug.Log("3");
             }
 
             m_dInventoryItem[ressource].SetItemInfos(ressource.GetName(), ressource.GetDescription(), ressource.GetNumber());

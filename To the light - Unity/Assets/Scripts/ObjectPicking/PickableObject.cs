@@ -10,6 +10,7 @@ public class PickableObject : MonoBehaviour
     [SerializeField]
     private float clickPickDistance = 5;
 
+    
     [SerializeField]
     private bool isPickableByObjectPicker = true;
 
@@ -46,7 +47,8 @@ public class PickableObject : MonoBehaviour
     }
 
     protected virtual void PickAction()
-    {
+    { 
+        _MGR_Son_Musique.Instance.PlaySound(gameObject.tag);
         Destroy(gameObject);
     }
 

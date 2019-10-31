@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class Door : MonoBehaviour
+public class Door : MonoBehaviour, IScenarioInteractable
 {
     [SerializeField] private float pickDistance = 5;
     private LayerMask layerMask;
@@ -40,6 +40,16 @@ public class Door : MonoBehaviour
                     if (hitInfo.transform.gameObject == gameObject)
                     {
                         //Debug.Log("Opening a door");
+                        try
+                        {
+                            Debug.Log("GO tag " + gameObject.tag);
+                            _MGR_Son_Musique.Instance.PlaySound(gameObject.tag);
+                        }
+                        catch (System.Exception e)
+                        {
+                            Debug.Log(e.Message);
+                        }
+                        
                         isOpened = !isOpened;
                         animator.SetBool("isOpened", isOpened);
                     }
@@ -54,5 +64,10 @@ public class Door : MonoBehaviour
                     gameObjectsNeeded.Remove(ressource);
             }
         }
+    }
+
+    public bool IsValidated()
+    {
+        return isOpened;
     }
 }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Ressource : PickableObject
+public class Ressource : PickableObject, IScenarioInteractable
 {
     [SerializeField]
     private string resName;
@@ -42,5 +42,13 @@ public class Ressource : PickableObject
     {
         _MGR_Ressources.Instance.AddRessource(this);
         gameObject.SetActive(false);
+    }
+
+    public bool IsValidated()
+    {
+        if (_MGR_Ressources.Instance.lRessources.Contains(this))
+            return true;
+        else
+            return false;
     }
 }
