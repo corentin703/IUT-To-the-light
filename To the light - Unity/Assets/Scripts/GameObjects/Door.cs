@@ -10,9 +10,7 @@ public class Door : MonoBehaviour, IScenarioInteractable
 
     private Animator animator;
 
-    // TODO: Mettre le système d'objet(s) nécéssaire(s) (genre des clés) au point quand l'inventaire sera finalisé
-    [HideInInspector] // À supprimer lors de cette mise en place afin de permettre l'édition
-    public List<Ressource> gameObjectsNeeded = new List<Ressource>();
+    public List<Ressource> lGameObjectsNeeded = new List<Ressource>();
 
     [HideInInspector]
     public bool isOpened = false;
@@ -25,43 +23,49 @@ public class Door : MonoBehaviour, IScenarioInteractable
 
         layerMask = LayerMask.GetMask("Toggable");
         gameObject.layer = layerMask;
+
+        // Vérifie qu'il n'y ai pas deux objets identiques
+        List<Ressource> temp = new List<Ressource>();
+
+        foreach (Ressource res in lGameObjectsNeeded)
+        {
+            foreach (Ressource res2 in temp)
+            {
+                if (res2.GetName() == res.GetName())
+                    throw new System.Exception("You can't unlock a door with 2 same objects !");
+            }
+
+            temp.Add(res);
+        }
+
     }
 
     void Update()
     {
-        if (gameObjectsNeeded.Count == 0)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                RaycastHit hitInfo = new RaycastHit();
+            RaycastHit hitInfo = new RaycastHit();
 
-                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, pickDistance, layerMask))
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, pickDistance, layerMask))
+            {
+                if (hitInfo.transform.gameObject == gameObject)
                 {
-                    if (hitInfo.transform.gameObject == gameObject)
+                    if (lGameObjectsNeeded.Count == 0)
                     {
-                        //Debug.Log("Opening a door");
-                        try
-                        {
-                            Debug.Log("GO tag " + gameObject.tag);
-                            _MGR_Son_Musique.Instance.PlaySound(gameObject.tag);
-                        }
-                        catch (System.Exception e)
-                        {
-                            Debug.Log(e.Message);
-                        }
+                        _MGR_Son_Musique.Instance.PlaySound(gameObject.tag);
                         
                         isOpened = !isOpened;
                         animator.SetBool("isOpened", isOpened);
                     }
+                    else
+                    {
+                        foreach (Ressource ressource in lGameObjectsNeeded)
+                        {
+                            if (_MGR_Ressources.Instance.lRessources.Contains(ressource))
+                                lGameObjectsNeeded.Remove(ressource);
+                        }
+                    }
                 }
-            }
-        }
-        else
-        {
-            foreach (Ressource ressource in gameObjectsNeeded)
-            {
-                if (_MGR_Ressources.Instance.lRessources.Contains(ressource))
-                    gameObjectsNeeded.Remove(ressource);
             }
         }
     }

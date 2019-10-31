@@ -9,7 +9,7 @@ public class InventoryItem : MonoBehaviour
     [SerializeField] private Text itemName;
     [SerializeField] private Text description;
 
-    public void SetItemInfos(string sName, string sDescription, int iNumber)
+    public void SetItemInfos(string sName, string sDescription, uint iNumber)
     {
         //this.icon.sprite = icon;
         itemName.text = sName + " x" + iNumber.ToString();

@@ -89,8 +89,9 @@ public class _MGR_UI : MonoBehaviour
 
     public void ShowRessources()
     {
-        foreach (Ressource res in _MGR_Ressources.Instance.lRessources)
-            Debug.Log(res.GetName() + " " + res.GetDescription());
+        // DEBUG
+        //foreach (Ressource res in _MGR_Ressources.Instance.lRessources)
+        //    Debug.Log(res.GetName() + " " + res.GetDescription());
 
         _MGR_GamePlay.Instance.player.LockCursor(false);
         m_UI_RessourcesPannel.SetActive(true);

@@ -8,7 +8,7 @@ public class Ressource : PickableObject, IScenarioInteractable
     private string resDescription;
 
     [SerializeField]
-    private int resNumber = 1;
+    private uint resNumber = 1;
 
     //[SerializeField]
     //private Sprite resIcon;
@@ -23,9 +23,14 @@ public class Ressource : PickableObject, IScenarioInteractable
         return resDescription;
     }
 
-    public int GetNumber()
+    public uint GetNumber()
     {
         return resNumber;
+    }
+
+    public void SetNumber(uint number)
+    {
+        resNumber = number;
     }
 
     //public Sprite GetIcon()
@@ -33,7 +38,7 @@ public class Ressource : PickableObject, IScenarioInteractable
     //    return resIcon;
     //}
 
-    public void Add(int num = 1)
+    public void Add(uint num = 1)
     {
         resNumber += num;
     }
