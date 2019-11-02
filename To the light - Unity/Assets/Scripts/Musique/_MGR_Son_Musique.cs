@@ -8,6 +8,9 @@ public class _MGR_Son_Musique : MonoBehaviour
     private static _MGR_Son_Musique p_instance = null;
     public static _MGR_Son_Musique Instance { get { return p_instance; } }
 
+    [SerializeField]
+    private int MaximumNAudioSource = 0; // Infinit si = 0
+
     [System.Serializable]
     public struct Son
     {
@@ -55,14 +58,19 @@ public class _MGR_Son_Musique : MonoBehaviour
                 }
             }
 
-            // Création d'un nouveau GO contenant un AudioSource
-            GameObject go = new GameObject("AudioSource" + (p_listAudioSource.Count + 1));
-            AudioSource newAudioSource = go.AddComponent<AudioSource>();
-            //Instantiate(newAudioSource); // Instancie un "clone" du GameObject, il est déjà instancé précedemment
-            newAudioSource.clip = p_sons[__nom];
-            newAudioSource.PlayDelayed(__delay);
+            if (MaximumNAudioSource == 0 || p_listAudioSource.Count <= MaximumNAudioSource)
+            {
+                // Création d'un nouveau GO contenant un AudioSource
+                GameObject go = new GameObject("AudioSource" + (p_listAudioSource.Count + 1));
+                AudioSource newAudioSource = go.AddComponent<AudioSource>();
+                //Instantiate(newAudioSource); // Instancie un "clone" du GameObject, il est déjà instancé précedemment
+                newAudioSource.clip = p_sons[__nom];
+                newAudioSource.PlayDelayed(__delay);
 
-            p_listAudioSource.Add(newAudioSource);
+                p_listAudioSource.Add(newAudioSource);
+            }
+            else
+                Debug.Log("To many AudioSources in use !");
         }
 
         Debug.Log("Song not foud");
