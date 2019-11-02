@@ -12,14 +12,26 @@ public class Door : MonoBehaviour, IScenarioInteractable
 
     public List<Ressource> lGameObjectsNeeded = new List<Ressource>();
 
-    [HideInInspector]
-    public bool isOpened = false;
+    private bool m_isOpened = false;
+    public bool IsOpened
+    {
+        get { return m_isOpened; }
+        set
+        {
+            m_isOpened = value;
+
+            animator.SetBool("isOpened", m_isOpened);
+
+            if (m_isOpened)
+                _MGR_Son_Musique.Instance.PlaySound(gameObject.tag);
+        }
+    }
 
 
     void Start()
     {
         animator = GetComponent<Animator>();
-        isOpened = animator.GetBool("isOpened");
+        m_isOpened = animator.GetBool("isOpened");
 
         layerMask = LayerMask.GetMask("Toggable");
         gameObject.layer = layerMask;
@@ -49,10 +61,7 @@ public class Door : MonoBehaviour, IScenarioInteractable
                 {
                     if (lGameObjectsNeeded.Count == 0)
                     {
-                        _MGR_Son_Musique.Instance.PlaySound(gameObject.tag);
-                        
-                        isOpened = !isOpened;
-                        animator.SetBool("isOpened", isOpened);
+                        IsOpened = !IsOpened;
                     }
                     else
                     {
@@ -69,6 +78,7 @@ public class Door : MonoBehaviour, IScenarioInteractable
 
     public bool IsValidated()
     {
-        return isOpened;
+        return IsOpened;
     }
+
 }

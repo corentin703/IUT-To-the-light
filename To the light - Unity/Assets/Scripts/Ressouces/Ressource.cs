@@ -13,7 +13,8 @@ public abstract class Ressource : PickableObject, IScenarioInteractable
 
     protected void Start()
     {
-        //Ressource.Number += unitNumber;
+        base.Start();
+
         if (Name == null || Name == "")
             Name = name;
     }

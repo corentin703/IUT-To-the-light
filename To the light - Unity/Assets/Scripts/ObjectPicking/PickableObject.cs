@@ -26,7 +26,7 @@ public class PickableObject : MonoBehaviour
         return isPickableByObjectPicker;
     }
 
-    void Start()
+    protected void Start()
     {
         string layerName = "L_PickableObject";
 
