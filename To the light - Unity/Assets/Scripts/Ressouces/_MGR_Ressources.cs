@@ -25,11 +25,6 @@ public class _MGR_Ressources : MonoBehaviour
         lRessources = new List<Ressource>();
     }
 
-    void Start()
-    {
-
-    }
-
     public bool IsUsingRessource(out Ressource ressource)
     {
         if (m_ressourceInUse)
@@ -44,26 +39,8 @@ public class _MGR_Ressources : MonoBehaviour
         }
     }
 
-    public bool IsHavingRessource(Ressource ressource)
-    {
-        if (lRessources.Contains(ressource))
-            return true;
-        else
-            return false;
-    }
-
     public void AddRessource(Ressource ressource)
     {
-        foreach (Ressource element in lRessources)
-        {
-            if (element.GetName() == ressource.GetName())
-            {
-                // Incrémente le nombre de la ressource de 1 si une ressource du même nom à déjà été prise
-                element.Add();
-                return;
-            }
-        }
-
         // Si c'est la première du nom a avoir été prise, on l'ajoute à la liste
         lRessources.Add(ressource);
     }

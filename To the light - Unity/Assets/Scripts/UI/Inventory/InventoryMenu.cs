@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class InventoryMenu : MonoBehaviour, IScrollHandler
 {
-    private Dictionary<Ressource, InventoryItem> m_dInventoryItem = new Dictionary<Ressource, InventoryItem>();
+    //private Dictionary<Ressource, InventoryItem> m_dInventoryItem = new Dictionary<Ressource, InventoryItem>();
+    private Dictionary<string, InventoryItem> m_dInventoryItem = new Dictionary<string, InventoryItem>();
     private Scrollbar m_scrollbar;
 
     private RectTransform TransRef;
@@ -36,24 +37,28 @@ public class InventoryMenu : MonoBehaviour, IScrollHandler
 
     public void Actualize()
     {
+        Dictionary<string, Ressource> dRessoucesByName = new Dictionary<string, Ressource>();
+
         foreach (Ressource ressource in _MGR_Ressources.Instance.lRessources)
         {
-            Debug.Log("1");
-            if (!m_dInventoryItem.ContainsKey(ressource))
+            if (!dRessoucesByName.ContainsKey(ressource.GetName()))
+                dRessoucesByName.Add(ressource.GetName(), ressource);
+        }
+
+        foreach (string resName in dRessoucesByName.Keys)
+        {
+            if (!m_dInventoryItem.ContainsKey(resName))
             {
-                Debug.Log("2");
                 GameObject item = Instantiate(templateItem, viewport.transform);
-                m_dInventoryItem.Add(ressource, item.GetComponent<InventoryItem>());
-                Debug.Log("3");
+                m_dInventoryItem.Add(resName, item.GetComponent<InventoryItem>());
             }
 
-            m_dInventoryItem[ressource].SetItemInfos(ressource.GetName(), ressource.GetDescription(), ressource.GetNumber());
+            m_dInventoryItem[resName].SetItemInfos(dRessoucesByName[resName].GetName(), dRessoucesByName[resName].GetDescription(), dRessoucesByName[resName].GetPickedNumber());
         }
 
         MaxScroll = ContentRef.rect.height - TransRef.rect.height;
 
         m_scrollbar.numberOfSteps = m_dInventoryItem.Count;
-        //m_scrollbar.size = 1 / m_dInventoryItem.Count;
     }
 
     public void Close()

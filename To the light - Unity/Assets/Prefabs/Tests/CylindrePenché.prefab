@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8029764683755438207}
   - component: {fileID: 8029764683755438206}
   - component: {fileID: 8029764683755438145}
-  - component: {fileID: 8029764683755438144}
+  - component: {fileID: 8932799097083413832}
   m_Layer: 11
   m_Name: "CylindrePench\xE9"
   m_TagString: Untagged
@@ -94,7 +94,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &8029764683755438144
+--- !u!114 &8932799097083413832
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,12 +103,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8029764683755438146}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fada3f68388fe0d48a175ef50c2b0800, type: 3}
+  m_Script: {fileID: 11500000, guid: 5384baafc9f8bef4aa854112907ad5b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPickableByClick: 0
+  isPickableByClick: 1
   clickPickDistance: 5
   isPickableByObjectPicker: 1
-  resName: "Cylindre pench\xE9"
-  resDescription: Il a mal au dos celui-ci
-  resNumber: 1
+  m_name: Cylindre
+  m_description: "Un tr\xE8s jolie Cylindre"
+  m_number: 1

@@ -1,59 +1,51 @@
 ﻿using UnityEngine;
 
-public class Ressource : PickableObject, IScenarioInteractable
+public abstract class Ressource : PickableObject, IScenarioInteractable
 {
-    [SerializeField]
-    private string resName;
-    [SerializeField]
-    private string resDescription;
+    public abstract string Name { get; set; }
+    public abstract string Descrition { get; set; }
+    public abstract uint unitNumber { get; set; }
 
-    [SerializeField]
-    private uint resNumber = 1;
+    //public static uint Number { get; protected set; } = 0;
 
     //[SerializeField]
-    //private Sprite resIcon;
-    
+    //public abstract Sprite resIcon { get; set; }
+
+    protected void Start()
+    {
+        //Ressource.Number += unitNumber;
+        if (Name == null || Name == "")
+            Name = name;
+    }
+
     public string GetName()
     {
-        return resName;
+        return Name;
     }
 
     public string GetDescription()
     {
-        return resDescription;
+        return Descrition;
     }
 
-    public uint GetNumber()
-    {
-        return resNumber;
-    }
-
-    public void SetNumber(uint number)
-    {
-        resNumber = number;
-    }
+    public abstract uint GetPickedNumber();
 
     //public Sprite GetIcon()
     //{
     //    return resIcon;
     //}
 
-    public void Add(uint num = 1)
-    {
-        resNumber += num;
-    }
+    public abstract void Add(uint num = 1);
 
     protected override void PickAction()
     {
+        Add(unitNumber);
         _MGR_Ressources.Instance.AddRessource(this);
         gameObject.SetActive(false);
     }
 
     public bool IsValidated()
     {
-        if (_MGR_Ressources.Instance.lRessources.Contains(this))
-            return true;
-        else
-            return false;
+        return _MGR_Ressources.Instance.lRessources.Contains(this);
     }
 }

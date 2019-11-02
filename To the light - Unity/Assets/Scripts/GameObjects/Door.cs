@@ -29,11 +29,8 @@ public class Door : MonoBehaviour, IScenarioInteractable
 
         foreach (Ressource res in lGameObjectsNeeded)
         {
-            foreach (Ressource res2 in temp)
-            {
-                if (res2.GetName() == res.GetName())
-                    throw new System.Exception("You can't unlock a door with 2 same objects !");
-            }
+            if (temp.Contains(res))
+                throw new System.Exception("You can't unlock a door with 2 same objects !");
 
             temp.Add(res);
         }

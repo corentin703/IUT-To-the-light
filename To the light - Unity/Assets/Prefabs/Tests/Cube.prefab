@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3940788983003817566}
   - component: {fileID: 8613338825668716227}
   - component: {fileID: 9178578844414021808}
-  - component: {fileID: 2223731183822507228}
   - component: {fileID: 3372330267152173819}
+  - component: {fileID: 4217311852526835896}
   m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
@@ -80,24 +80,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &2223731183822507228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4862721280977141587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fada3f68388fe0d48a175ef50c2b0800, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPickableByClick: 1
-  clickPickDistance: 5
-  isPickableByObjectPicker: 0
-  resName: Cube
-  resDescription: Pour contruire des trucs
-  resNumber: 1
 --- !u!65 &3372330267152173819
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -111,3 +93,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4217311852526835896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4862721280977141587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9677d62f6e496459fdec2464b66634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPickableByClick: 1
+  clickPickDistance: 5
+  isPickableByObjectPicker: 1
