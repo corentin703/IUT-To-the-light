@@ -27,11 +27,11 @@ public class InventoryMenu : MonoBehaviour, IScrollHandler
     private float ScrollSpeed = 100;
 
 
-    void Start()
+    void Awake()
     {
         m_scrollbar = GetComponentInChildren<Scrollbar>();
         TransRef = GetComponent<RectTransform>();
-        ScrollRef = GetComponentInChildren<ScrollRect>();
+        ScrollRef = GetComponent<ScrollRect>();
         ContentRef = ScrollRef.content;
     }
 
@@ -57,7 +57,6 @@ public class InventoryMenu : MonoBehaviour, IScrollHandler
         }
 
         MaxScroll = ContentRef.rect.height - TransRef.rect.height;
-
         m_scrollbar.numberOfSteps = m_dInventoryItem.Count;
     }
 

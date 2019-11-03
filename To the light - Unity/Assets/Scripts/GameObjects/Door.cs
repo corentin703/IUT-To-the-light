@@ -33,8 +33,10 @@ public class Door : MonoBehaviour, IScenarioInteractable
         animator = GetComponent<Animator>();
         m_isOpened = animator.GetBool("isOpened");
 
-        layerMask = LayerMask.GetMask("Toggable");
-        gameObject.layer = layerMask;
+        string layerName = "Toggable";
+
+        layerMask = LayerMask.GetMask(layerName);
+        gameObject.layer = LayerMask.NameToLayer(layerName);
 
         // Vérifie qu'il n'y ai pas deux objets identiques
         List<Ressource> temp = new List<Ressource>();
