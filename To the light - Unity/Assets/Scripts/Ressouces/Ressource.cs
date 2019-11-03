@@ -2,11 +2,13 @@
 
 public abstract class Ressource : PickableObject, IScenarioInteractable
 {
-    public abstract string Name { get; set; }
-    public abstract string Descrition { get; set; }
-    public abstract uint unitNumber { get; set; }
+    [SerializeField]
+    protected string UniqueIdentifier;
+    public string Name { get; protected set; }
+    public string Descrition { get; protected set; }
+    public virtual uint unitNumber { get; protected set; } = 1;
 
-    //public static uint Number { get; protected set; } = 0;
+    public static uint PickedNumber { get; protected set; } = 0;
 
     //[SerializeField]
     //public abstract Sprite resIcon { get; set; }
@@ -15,21 +17,15 @@ public abstract class Ressource : PickableObject, IScenarioInteractable
     {
         base.Start();
 
-        if (Name == null || Name == "")
-            Name = name;
+        _MGR_Ressources.RessourceInfo infos = _MGR_Ressources.Instance.GetRessourceInfo(UniqueIdentifier);
+        Name = infos.name;
+        Descrition = infos.description;
+
+        //if (Name == null || Name == "")
+        //    Name = name;
     }
 
-    public string GetName()
-    {
-        return Name;
-    }
-
-    public string GetDescription()
-    {
-        return Descrition;
-    }
-
-    public abstract uint GetPickedNumber();
+    public uint GetPickedNumber() { return PickedNumber; }
 
     //public Sprite GetIcon()
     //{

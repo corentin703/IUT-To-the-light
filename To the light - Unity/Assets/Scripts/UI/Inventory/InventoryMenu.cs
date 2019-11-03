@@ -41,8 +41,8 @@ public class InventoryMenu : MonoBehaviour, IScrollHandler
 
         foreach (Ressource ressource in _MGR_Ressources.Instance.lRessources)
         {
-            if (!dRessoucesByName.ContainsKey(ressource.GetName()))
-                dRessoucesByName.Add(ressource.GetName(), ressource);
+            if (!dRessoucesByName.ContainsKey(ressource.Name))
+                dRessoucesByName.Add(ressource.Name, ressource);
         }
 
         foreach (string resName in dRessoucesByName.Keys)
@@ -53,7 +53,7 @@ public class InventoryMenu : MonoBehaviour, IScrollHandler
                 m_dInventoryItem.Add(resName, item.GetComponent<InventoryItem>());
             }
 
-            m_dInventoryItem[resName].SetItemInfos(dRessoucesByName[resName].GetName(), dRessoucesByName[resName].GetDescription(), dRessoucesByName[resName].GetPickedNumber());
+            m_dInventoryItem[resName].SetItemInfos(dRessoucesByName[resName].Name, dRessoucesByName[resName].Descrition, dRessoucesByName[resName].GetPickedNumber());
         }
 
         MaxScroll = ContentRef.rect.height - TransRef.rect.height;

@@ -63,8 +63,7 @@ MonoBehaviour:
   isPickableByClick: 1
   clickPickDistance: 5
   isPickableByObjectPicker: 1
-  m_name: Lampe torche
-  m_description: "Vous aidera \xE0 y voir plus clair"
+  UniqueIdentifier: torch
 --- !u!1 &1576819921683794798
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,7 +80,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1576819921683794799
 Transform:
   m_ObjectHideFlags: 0
@@ -103,12 +102,12 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576819921683794798}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 10
-  m_Range: 17.260206
+  m_Range: 30
   m_SpotAngle: 82
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
