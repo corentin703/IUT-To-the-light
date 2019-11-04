@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class InitializeUI : MonoBehaviour
 {
+    public static bool IsInitialized { get; private set; } = false;
+
     [SerializeField]
     private Text UI_timeLeft;
 
@@ -21,13 +23,18 @@ public class InitializeUI : MonoBehaviour
     private GameObject UI_RessourcesPannel;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        _MGR_UI.Instance.SetUp(UI_timeLeft, 
-                                UI_score, 
-                                UI_PausePannel, 
-                                UI_PopUpPannel, 
+        if (_MGR_UI.Instance)
+        {
+            _MGR_UI.Instance.SetUp(UI_timeLeft,
+                                UI_score,
+                                UI_PausePannel,
+                                UI_PopUpPannel,
                                 UI_RessourcesPannel
                             );
+
+            IsInitialized = true;
+        }
     }
 }

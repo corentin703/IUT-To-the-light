@@ -12,9 +12,9 @@ public class Door : MonoBehaviour, IScenarioInteractable
 
     public List<Ressource> lGameObjectsNeeded = new List<Ressource>();
 
-    private bool m_isLocked = false;
     private bool m_isManaged = false;
 
+    private bool m_isLocked;
     public bool IsLocked
     {
         get { return m_isLocked; }
@@ -40,17 +40,21 @@ public class Door : MonoBehaviour, IScenarioInteractable
         }
     }
 
-
-    void Start()
+    void Awake()
     {
         animator = GetComponent<Animator>();
         m_isOpened = animator.GetBool("isOpened");
+
+        m_isLocked = (lGameObjectsNeeded.Count != 0 && !m_isOpened) ? true : false;
 
         string layerName = "Toggable";
 
         layerMask = LayerMask.GetMask(layerName);
         gameObject.layer = LayerMask.NameToLayer(layerName);
+    }
 
+    void Start()
+    {
         // Vérifie qu'il n'y ai pas deux objets identiques
         List<Ressource> temp = new List<Ressource>();
 
@@ -62,8 +66,8 @@ public class Door : MonoBehaviour, IScenarioInteractable
             temp.Add(res);
         }
 
-        if (lGameObjectsNeeded.Count != 0)
-            IsLocked = true; 
+        //if (lGameObjectsNeeded.Count != 0)
+        //    IsLocked = true; 
 
     }
 
@@ -83,14 +87,19 @@ public class Door : MonoBehaviour, IScenarioInteractable
                     }
                     else if (!m_isManaged)
                     {
-                        foreach (Ressource ressource in lGameObjectsNeeded)
-                        {
-                            if (_MGR_Ressources.Instance.lRessources.Contains(ressource))
-                                lGameObjectsNeeded.Remove(ressource);
-                        }
-
                         if (lGameObjectsNeeded.Count == 0)
-                            IsLocked = false;
+                            m_isLocked = false;
+                        else
+                        {
+                            // On ne peut pas supprimer un objet d'une liste quand on y itére: on créé donc une copie temporaire 
+                            List<Ressource> temp = new List<Ressource>(lGameObjectsNeeded);
+
+                            foreach (Ressource ressource in temp)
+                            {
+                                if (_MGR_Ressources.Instance.lRessources.Contains(ressource))
+                                    lGameObjectsNeeded.Remove(ressource);
+                            }
+                        }
                     }
                 }
             }
