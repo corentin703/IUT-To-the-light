@@ -5,7 +5,7 @@ public abstract class Ressource : PickableObject, IScenarioInteractable
     [SerializeField]
     protected string UniqueIdentifier;
     public string Name { get; protected set; }
-    public string Descrition { get; protected set; }
+    public string Description { get; protected set; }
     public virtual uint unitNumber { get; protected set; } = 1;
 
     public static uint PickedNumber { get; protected set; } = 0;
@@ -19,7 +19,7 @@ public abstract class Ressource : PickableObject, IScenarioInteractable
 
         _MGR_Ressources.RessourceInfo infos = _MGR_Ressources.Instance.GetRessourceInfo(UniqueIdentifier);
         Name = infos.name;
-        Descrition = infos.description;
+        Description = infos.description;
 
         //if (Name == null || Name == "")
         //    Name = name;

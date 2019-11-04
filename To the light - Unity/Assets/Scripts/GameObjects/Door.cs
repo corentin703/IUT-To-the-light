@@ -12,6 +12,19 @@ public class Door : MonoBehaviour, IScenarioInteractable
 
     public List<Ressource> lGameObjectsNeeded = new List<Ressource>();
 
+    private bool m_isLocked = false;
+    private bool m_isManaged = false;
+
+    public bool IsLocked
+    {
+        get { return m_isLocked; }
+        set
+        {
+            m_isLocked = value;
+            m_isManaged = value;
+        }
+    }
+
     private bool m_isOpened = false;
     public bool IsOpened
     {
@@ -49,6 +62,9 @@ public class Door : MonoBehaviour, IScenarioInteractable
             temp.Add(res);
         }
 
+        if (lGameObjectsNeeded.Count != 0)
+            IsLocked = true; 
+
     }
 
     void Update()
@@ -61,17 +77,20 @@ public class Door : MonoBehaviour, IScenarioInteractable
             {
                 if (hitInfo.transform.gameObject == gameObject)
                 {
-                    if (lGameObjectsNeeded.Count == 0)
+                    if (!IsLocked)
                     {
                         IsOpened = !IsOpened;
                     }
-                    else
+                    else if (!m_isManaged)
                     {
                         foreach (Ressource ressource in lGameObjectsNeeded)
                         {
                             if (_MGR_Ressources.Instance.lRessources.Contains(ressource))
                                 lGameObjectsNeeded.Remove(ressource);
                         }
+
+                        if (lGameObjectsNeeded.Count == 0)
+                            IsLocked = false;
                     }
                 }
             }

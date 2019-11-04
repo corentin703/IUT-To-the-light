@@ -53,7 +53,7 @@ public class InventoryMenu : MonoBehaviour, IScrollHandler
                 m_dInventoryItem.Add(resName, item.GetComponent<InventoryItem>());
             }
 
-            m_dInventoryItem[resName].SetItemInfos(dRessoucesByName[resName].Name, dRessoucesByName[resName].Descrition, dRessoucesByName[resName].GetPickedNumber());
+            m_dInventoryItem[resName].SetItemInfos(dRessoucesByName[resName].Name, dRessoucesByName[resName].Description, dRessoucesByName[resName].GetPickedNumber());
         }
 
         MaxScroll = ContentRef.rect.height - TransRef.rect.height;
