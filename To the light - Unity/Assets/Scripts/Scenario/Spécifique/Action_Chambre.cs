@@ -20,8 +20,6 @@ public class Action_Chambre : Action_Scenario_Etape
 
     public override void Update()
     {
-        Debug.Log("State: " + m_door.IsLocked);
-
         if (_MGR_Ressources.Instance.lRessources.Contains(m_torche) &&
         _MGR_Ressources.Instance.lRessources.Contains(m_key))
             Declencher_Etape_Suivante_Du_Scenario();
@@ -30,6 +28,6 @@ public class Action_Chambre : Action_Scenario_Etape
     public override void Declencher_Etape_Suivante_Du_Scenario()
     {
         m_door.IsLocked = false;
-        //base.Declencher_Etape_Suivante_Du_Scenario();
+        base.Declencher_Etape_Suivante_Du_Scenario();
     }
 }
