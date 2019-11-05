@@ -60,6 +60,8 @@ public class Screamer : MonoBehaviour, Interface_TL_Events
     {
         m_image.enabled = false;
 
+        _MGR_Son_Musique.Instance.PlaySound("Heart");
+
         Destroy(this);
     }
 

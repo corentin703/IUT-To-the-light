@@ -21,7 +21,6 @@ public class Torche : Ressource
         }
     }
 
-    //private Camera m_playerCamera = new Camera();
     private Collider m_collider;
     private Light m_light;
 

@@ -197,7 +197,7 @@ public class _MGR_TimeLine : MonoBehaviour {
             if (evt.isPerdiodic_TL_Event(out period))
             {
                 float evtStart = evt.getStartTime_TL_Event();
-                float evtStop = evt.getDuration_TL_Event();
+                float evtStop = evtStart + evt.getDuration_TL_Event();
 
                 while (evtStop <= evt.getStopTime_TL_Event())
                 {
