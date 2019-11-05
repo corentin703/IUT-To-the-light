@@ -33,7 +33,7 @@ public class _MGR_ScenarioManager : MonoBehaviour
         // DontDestroyOnLoad(gameObject);   par nécessaire ici car déja fait  par script __DDOL sur l'objet _EGO_app qui recueille tous les mgr
     }
 
-    public void Configurer( Scenario_Etape[] __etapes_du_scenario, AudioClip defaultEndStepSound = null)
+    public void Configurer( Scenario_Etape[] __etapes_du_scenario)
     {
         // méthode non robuste 
         //p_etapes.AddRange(__etapes_du_scenario);

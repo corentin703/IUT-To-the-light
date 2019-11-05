@@ -22,7 +22,10 @@ public class Screamer : MonoBehaviour, Interface_TL_Events
     private List<Sprite> lSprites = new List<Sprite>();
 
     // Statique afin d'avoir accès au contenu aux différentes périodes
-    private static ScreamSprite[] m_tSprites;
+    private static List<Sprite> m_lSprites;
+    private static bool m_isLastSprite = false;
+
+    //private static ScreamSprite[] m_tSprites;
 
     private Image m_image;
 
@@ -34,15 +37,17 @@ public class Screamer : MonoBehaviour, Interface_TL_Events
 
     public void Awake()
     {
-        if (m_tSprites == null || m_tSprites.Length == 0)
+        if (m_lSprites == null || m_lSprites.Count == 0)
         {
             if (lSprites.Count == 0)
                 throw new NotImplementedException();
 
-            m_tSprites = new ScreamSprite[lSprites.Count];
+            m_lSprites = new List<Sprite>(lSprites);
 
-            for (int i = 0; i < lSprites.Count; ++i)
-                m_tSprites[i] = new ScreamSprite(lSprites[i]);
+            //m_lSprites = new ScreamSprite[lSprites.Count];
+
+            //for (int i = 0; i < lSprites.Count; ++i)
+            //    m_lSprites[i] = new ScreamSprite(lSprites[i]);
         }
                 
         m_image = this.gameObject.GetComponent<Image>();
@@ -60,7 +65,7 @@ public class Screamer : MonoBehaviour, Interface_TL_Events
 
     public float getDuration_TL_Event()
     {
-        if (!m_image || m_tSprites.Length == 0)
+        if (!m_image || m_lSprites.Count == 0)
             throw new NotImplementedException();
 
         return DureeEventTL;
@@ -108,19 +113,22 @@ public class Screamer : MonoBehaviour, Interface_TL_Events
 
     public void start_TL_Event()
     {
-        if (!m_image || m_tSprites.Length == 0) 
+        if (!m_image || m_lSprites.Count == 0) 
             throw new NotImplementedException();
         
-        for (int i = 0; i < m_tSprites.Length; ++i)
+        for (int i = 0; i < m_lSprites.Count - 1; ++i)
         {
-            Debug.Log(m_tSprites[i].sprite.name);
-
-            if (!m_tSprites[i].HasBeenShowed)
+            if (!m_image.sprite || m_isLastSprite)
             {
-                m_image.sprite = m_tSprites[i].sprite;
-                m_tSprites[i].HasBeenShowed = true;
+                m_image.sprite = m_lSprites[i];
+                m_isLastSprite = false;
+            }
+            else if (m_lSprites[i] == m_image.sprite)
+            {
+                m_image.sprite = m_lSprites[i + 1];
 
-                //Debug.Log(m_tSprites[i].sprite.name);
+                if ((i + 2) == m_lSprites.Count)
+                    m_isLastSprite = true;
 
                 break;
             }
