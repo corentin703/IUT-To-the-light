@@ -82,6 +82,6 @@ public class _MGR_Son_Musique : MonoBehaviour
                 Debug.Log("To many AudioSources in use !");
         }
 
-        Debug.Log("Song not foud");
+        Debug.Log("Song not found");
     }
 }
