@@ -25,12 +25,17 @@ public class Torche : Ressource
     private Collider m_collider;
     private Light m_light;
 
+    void Awake()
+    {
+        m_collider = GetComponent<Collider>();
+        m_light = GetComponentInChildren<Light>();
+
+        m_light.enabled = false;
+    }
+
     void Start()
     {
         base.Start();
-
-        m_collider = GetComponent<Collider>();
-        m_light = GetComponentInChildren<Light>();
     }
 
     void Update()
