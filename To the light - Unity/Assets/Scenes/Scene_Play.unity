@@ -8879,6 +8879,9 @@ MonoBehaviour:
   - uniqueIdentifier: key
     name: "Cl\xE9"
     description: "Une cl\xE9"
+  - uniqueIdentifier: crowbar
+    name: Pied de biche
+    description: "Peut-\xEAtre vous aidera-t-il \xE0 sortir..."
 --- !u!4 &588610391
 Transform:
   m_ObjectHideFlags: 0
@@ -12433,6 +12436,96 @@ Transform:
   m_Father: {fileID: 1725662954}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &943841560
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1225921265}
+    m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 7f758cf01fcf8724eb4654345a71f29f,
+        type: 3}
+      propertyPath: m_Name
+      value: pied_de_biche
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7f758cf01fcf8724eb4654345a71f29f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7f758cf01fcf8724eb4654345a71f29f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7f758cf01fcf8724eb4654345a71f29f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7f758cf01fcf8724eb4654345a71f29f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7f758cf01fcf8724eb4654345a71f29f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7f758cf01fcf8724eb4654345a71f29f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7f758cf01fcf8724eb4654345a71f29f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7f758cf01fcf8724eb4654345a71f29f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7f758cf01fcf8724eb4654345a71f29f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7f758cf01fcf8724eb4654345a71f29f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7f758cf01fcf8724eb4654345a71f29f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7f758cf01fcf8724eb4654345a71f29f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7f758cf01fcf8724eb4654345a71f29f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7f758cf01fcf8724eb4654345a71f29f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7f758cf01fcf8724eb4654345a71f29f, type: 3}
+--- !u!4 &943841561 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 7f758cf01fcf8724eb4654345a71f29f,
+    type: 3}
+  m_PrefabInstance: {fileID: 943841560}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &950957413
 GameObject:
   m_ObjectHideFlags: 0
@@ -15289,6 +15382,68 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225190137}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1225921264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1225921265}
+  - component: {fileID: 1225921267}
+  - component: {fileID: 1225921266}
+  m_Layer: 0
+  m_Name: PiedDeBiche
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1225921265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225921264}
+  m_LocalRotation: {x: 0, y: -0, z: -0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: 4.93, y: -5.05, z: -8.033448}
+  m_LocalScale: {x: 250.5102, y: 2.9583793, z: 2.600861}
+  m_Children:
+  - {fileID: 943841561}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1225921266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225921264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9351be27fdcefdf4baecf4c60e2d54e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPickableByClick: 1
+  clickPickDistance: 3
+  isPickableByObjectPicker: 1
+  UniqueIdentifier: crowbar
+--- !u!65 &1225921267
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225921264}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.010569892, y: 0.10176438, z: 0.07974881}
+  m_Center: {x: -0.00053232466, y: 0.0048529194, z: -0.012470113}
 --- !u!1 &1241136924
 GameObject:
   m_ObjectHideFlags: 0
