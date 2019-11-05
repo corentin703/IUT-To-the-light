@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -281,19 +281,19 @@ MonoBehaviour:
   sons:
   - nom: Door_Corridor
     son: {fileID: 8300000, guid: 1be81778069786249b61e15eaa70eb4e, type: 3}
-  - nom: "Acouph\xE8ne"
+  - nom: Acouphene
     son: {fileID: 8300000, guid: 088f89e90acfe3a469f9d13419218080, type: 3}
   - nom: Ambiance_Grincements
     son: {fileID: 8300000, guid: d56e4623d0e09134ba4fd2af71f9b4bd, type: 3}
   - nom: Ambiance_Humide
     son: {fileID: 8300000, guid: 9ce11f6427c53114a8882f0ffd731da4, type: 3}
-  - nom: "Boite_\xE0Musique"
+  - nom: Boite_Musique
     son: {fileID: 8300000, guid: 9db94f1864a228a49b12bfc7520acb68, type: 3}
-  - nom: Boom_de_Supense
+  - nom: Boom_Supense
     son: {fileID: 8300000, guid: b4472b5d94387fa45ad4218567a90272, type: 3}
   - nom: Coups
     son: {fileID: 8300000, guid: d8c368e4a0c0fbd4b81622f4f709009b, type: 3}
-  - nom: Coups#2
+  - nom: Coups2
     son: {fileID: 8300000, guid: da751c8b776be264ba1739dbc8ad49cd, type: 3}
   - nom: Couteau
     son: {fileID: 8300000, guid: a9f632f88d166794c94c3b00ac5b527b, type: 3}
@@ -301,13 +301,11 @@ MonoBehaviour:
     son: {fileID: 8300000, guid: 5b23ad384ee33bc4ca55f100bae12b0a, type: 3}
   - nom: Murmures
     son: {fileID: 8300000, guid: 5162cdcd7b234e7499cd81292cd9e630, type: 3}
-  - nom: Musique_d_Ambiance
+  - nom: backgroundSound
     son: {fileID: 8300000, guid: c40eef002339abf49b1928dcb2c4e76f, type: 3}
-  - nom: Musique_d_Ambiance#2
+  - nom: MusiqueAmbiance2
     son: {fileID: 8300000, guid: edc5b66245234f342aea9a152ec45f88, type: 3}
-  - nom: "Pluie_sur_Fen\xEAtre"
+  - nom: PluieFenetre
     son: {fileID: 8300000, guid: 72a0c69126d0d2e48bf48c9de3e4d96f, type: 3}
-  - nom: Sang_et_Gore
+  - nom: SangetGore
     son: {fileID: 8300000, guid: 572bf81f7bfe54249a30d4aa9b9fe638, type: 3}
-  - nom: BackGroundSound
-    son: {fileID: 8300000, guid: b1849b69834345641b00ccf58afc8583, type: 3}

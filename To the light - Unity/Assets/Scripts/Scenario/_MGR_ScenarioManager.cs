@@ -82,6 +82,9 @@ public class _MGR_ScenarioManager : MonoBehaviour
     {
         p_num_etapeEnCours = 0;
         ActiverEtapeEnCours();
+
+        if (_MGR_Son_Musique.Instance.IsBackgroundSound)
+            _MGR_Son_Musique.Instance.PlaySound("backgroundSound");
     }
 
     public void EtapeSuivante()

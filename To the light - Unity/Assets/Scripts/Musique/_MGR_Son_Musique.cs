@@ -8,10 +8,11 @@ public class _MGR_Son_Musique : MonoBehaviour
     private static _MGR_Son_Musique p_instance = null;
     public static _MGR_Son_Musique Instance { get { return p_instance; } }
 
-    private List<AudioClip> m_backgroundAaudioClips;
-
     [SerializeField]
     private int MaximumNAudioSource = 0; // Infinit si = 0
+
+    [HideInInspector]
+    public bool IsBackgroundSound { get; private set; }
 
     [System.Serializable]
     public struct Son
@@ -40,12 +41,8 @@ public class _MGR_Son_Musique : MonoBehaviour
         {
             p_sons.Add(son.nom, son.son);
         }
-    }
 
-    void Start()
-    {
-        if (p_sons.ContainsKey("backgroundSound"))
-            PlaySound("backgroundSound");
+        IsBackgroundSound = (p_sons.ContainsKey("backgroundSound")) ? true : false;
     }
 
     // jouer un son du jeu
@@ -79,9 +76,9 @@ public class _MGR_Son_Musique : MonoBehaviour
                 p_listAudioSource.Add(newAudioSource);
             }
             else
-                Debug.Log("To many AudioSources in use !");
+                Debug.LogError("To many AudioSources in use !");
         }
-
-        Debug.Log("Song not found");
+        else
+            Debug.LogError("Song not found");
     }
 }

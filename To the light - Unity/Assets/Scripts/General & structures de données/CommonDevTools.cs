@@ -14,7 +14,7 @@ public abstract class CommonDevTools
 
     public static void DEBUG(string __err)
     {
-        if (debugging)
+        if (debugging && __err != "")
             Debug.Log(__err);
 
     }
