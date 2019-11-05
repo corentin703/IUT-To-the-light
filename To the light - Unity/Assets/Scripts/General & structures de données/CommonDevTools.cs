@@ -16,7 +16,6 @@ public abstract class CommonDevTools
     {
         if (debugging && __err != "")
             Debug.Log(__err);
-
     }
 
     public static void WARNING(string __err, bool __force_pause = false)
