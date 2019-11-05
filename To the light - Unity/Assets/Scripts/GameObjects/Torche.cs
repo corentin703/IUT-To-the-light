@@ -15,8 +15,8 @@ public class Torche : Ressource
         get { return m_isTurnedOn; }
         set 
         {
+            // TODO: Son on / off
             m_isTurnedOn = value;
-            m_collider.enabled = !m_isTurnedOn; // Pas besoin du collider quand la lampe se déplace avec l'utilisateur
             m_light.enabled = m_isTurnedOn;
         }
     }
@@ -33,9 +33,16 @@ public class Torche : Ressource
         m_light = GetComponentInChildren<Light>();
     }
 
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(1))
+            IsTurnedOn = !IsTurnedOn;
+    }
+
     protected override void PickAction()
     {
         _MGR_Ressources.Instance.AddRessource(this);
+        m_collider.enabled = false; // Pas besoin du collider quand la lampe se déplace avec l'utilisateur
         IsTurnedOn = true;
 
         gameObject.transform.parent = _MGR_GamePlay.Instance.player.GetComponentInChildren<Camera>().transform;

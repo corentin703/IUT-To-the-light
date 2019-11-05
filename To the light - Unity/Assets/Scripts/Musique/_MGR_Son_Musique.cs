@@ -8,6 +8,8 @@ public class _MGR_Son_Musique : MonoBehaviour
     private static _MGR_Son_Musique p_instance = null;
     public static _MGR_Son_Musique Instance { get { return p_instance; } }
 
+    private List<AudioClip> m_backgroundAaudioClips;
+
     [SerializeField]
     private int MaximumNAudioSource = 0; // Infinit si = 0
 
@@ -39,6 +41,13 @@ public class _MGR_Son_Musique : MonoBehaviour
             p_sons.Add(son.nom, son.son);
         }
     }
+
+    void Start()
+    {
+        if (p_sons.ContainsKey("backgroundSound"))
+            PlaySound("backgroundSound");
+    }
+
     // jouer un son du jeu
     // vérifier que le son existe
     // trouver un lecteur libre (audioSource) ou en ajouter un s'ils sont tous en lecture

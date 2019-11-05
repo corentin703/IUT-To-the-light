@@ -6,15 +6,21 @@ public class InitialiserScenario : MonoBehaviour
 {
     public Scenario_Etape[] etapes_du_scenario;
 
-    public AudioClip defaultEndStepSound = null;
-
     //Awake is always called before any Start functions
     void Awake(){
         if (_MGR_ScenarioManager.Instance) {
-            _MGR_ScenarioManager.Instance.Configurer(etapes_du_scenario, defaultEndStepSound);
-            _MGR_ScenarioManager.Instance.Demarrer();
-            // pour être robuste, il faudrait synchroniser les différentes intialisations avant de démarer ...
-            // e.g. s'assurer que l'initialisations des TL Events est aussi terminée , etc ....
+            _MGR_ScenarioManager.Instance.Configurer(etapes_du_scenario);
+
+
+            if (InitializeRessources.IsInitialized &&
+                Initialiser_TL_Events.IsInitialized &&
+                InitializeUI.IsInitialized &&
+                InitialiserGamePlayEtDemarrerPartie.IsInitialized)
+            {
+                _MGR_ScenarioManager.Instance.Demarrer();
+            }
+            else
+                throw new System.Exception("Error during initialization");
         }
      }
 
