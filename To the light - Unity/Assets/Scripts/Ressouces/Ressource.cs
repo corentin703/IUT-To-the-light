@@ -13,6 +13,13 @@ public abstract class Ressource : PickableObject, IScenarioInteractable
     //[SerializeField]
     //public abstract Sprite resIcon { get; set; }
 
+    protected void Awake()
+    {
+        // Si on a pas défini l'identifiant, on prend le tag (la présence de l'identifiant unique est une volonté de ne pas surcharger les tags)
+        if (UniqueIdentifier == null)
+            UniqueIdentifier = gameObject.tag;
+    }
+
     protected void Start()
     {
         base.Start();
@@ -20,9 +27,6 @@ public abstract class Ressource : PickableObject, IScenarioInteractable
         _MGR_Ressources.RessourceInfo infos = _MGR_Ressources.Instance.GetRessourceInfo(UniqueIdentifier);
         Name = infos.name;
         Description = infos.description;
-
-        //if (Name == null || Name == "")
-        //    Name = name;
     }
 
     public uint GetPickedNumber() { return PickedNumber; }

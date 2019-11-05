@@ -135,6 +135,7 @@ public class Screamer : MonoBehaviour, Interface_TL_Events
         }
 
         m_image.enabled = true;
+        _MGR_Son_Musique.Instance.PlaySound("Cris");
     }
 
     public void TL_ChronoArrete()
