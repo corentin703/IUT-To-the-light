@@ -29,23 +29,16 @@ public class Action_Cuisine : Action_Scenario_Etape
         {
             if (m_chrono == 0f)
             {
-                Debug.Log("AZ");
                 m_chrono = _MGR_TimeLine.Instance.chrono;
             }
             else
             {
-                Debug.Log(_MGR_TimeLine.Instance.chrono - m_chrono);
-
                 if ((_MGR_TimeLine.Instance.chrono - m_chrono) > 1.8f && !m_knife.HasBeenThrowed)
                 {
-                    Debug.Log("OK");
-
                     if (m_knife.HasBeenThrowed)
                         Declencher_Etape_Suivante_Du_Scenario();
                     else
-                    {
                         m_knife.Throw();
-                    }
 
                     m_chrono = _MGR_TimeLine.Instance.chrono;
                 }
