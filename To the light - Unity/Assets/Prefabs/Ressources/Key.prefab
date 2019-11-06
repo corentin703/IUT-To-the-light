@@ -138,5 +138,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPickableByClick: 1
   clickPickDistance: 5
-  isPickableByObjectPicker: 1
+  isPickableByObjectPicker: 0
   UniqueIdentifier: key
