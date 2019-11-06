@@ -13,11 +13,13 @@ public class Knife : MonoBehaviour
 
     void Awake()
     {
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
         gameObject.GetComponent<Rigidbody>().useGravity = false;
     }
 
     public void Throw()
     {
+        gameObject.GetComponent<Rigidbody>().isKinematic = false;
         gameObject.GetComponent<Rigidbody>().AddForce((negativeX) ? -1000f : 1000f, 0f, 0f);
         gameObject.GetComponent<Rigidbody>().useGravity = true;
 
