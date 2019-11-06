@@ -2704,12 +2704,12 @@ PrefabInstance:
     - target: {fileID: 3724581395538110744, guid: bb16644cd2d52304a85bd816b3ced0da,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40.63
+      value: 35.95
       objectReference: {fileID: 0}
     - target: {fileID: 3724581395538110744, guid: bb16644cd2d52304a85bd816b3ced0da,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.151
+      value: 6.61
       objectReference: {fileID: 0}
     - target: {fileID: 3724581395538110744, guid: bb16644cd2d52304a85bd816b3ced0da,
         type: 3}
@@ -2807,7 +2807,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
@@ -6331,8 +6331,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.32405722, y: 0.17229986, z: 0.29826707}
-  m_Center: {x: 0.0021527503, y: 0.07877945, z: -0.0075476808}
+  m_Size: {x: 0.32405728, y: 0.13086498, z: 0.3144769}
+  m_Center: {x: 0.0021527484, y: 0.058062017, z: -0.015652511}
 --- !u!4 &413235020 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8bc50c97889f1ed498da1262db2ef353,
@@ -8486,6 +8486,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corps
       objectReference: {fileID: 0}
+    - target: {fileID: 5232488858435980449, guid: fb2ee58b6fe07ff418d88268b2567221,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fb2ee58b6fe07ff418d88268b2567221,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8540,11 +8545,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5232488858435980449, guid: fb2ee58b6fe07ff418d88268b2567221,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb2ee58b6fe07ff418d88268b2567221, type: 3}
@@ -10629,11 +10629,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ensembleporte
       objectReference: {fileID: 0}
-    - target: {fileID: -8508212980618830706, guid: aff230b3e6cfca64e85e7c2e2039e8a3,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 45cae5f8f7328d54094b1a3ad245929c, type: 2}
     - target: {fileID: -4216859302048453862, guid: aff230b3e6cfca64e85e7c2e2039e8a3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10704,6 +10699,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.2092652
       objectReference: {fileID: 0}
+    - target: {fileID: -8508212980618830706, guid: aff230b3e6cfca64e85e7c2e2039e8a3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45cae5f8f7328d54094b1a3ad245929c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aff230b3e6cfca64e85e7c2e2039e8a3, type: 3}
 --- !u!1 &772158066
@@ -13792,7 +13792,8 @@ MonoBehaviour:
   isPickableByClick: 1
   clickPickDistance: 5
   isPickableByObjectPicker: 0
-  HasBeenPressed: 0
+  m_puzzleCube: {fileID: 1802177867}
+  m_puzzleCylinder: {fileID: 40599654}
 --- !u!65 &1016302027
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20401,11 +20402,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robinet
       objectReference: {fileID: 0}
-    - target: {fileID: -6434590018773005939, guid: 344722c219dca754bb6bb7e20400b139,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 37671574a6b19b540ae46576e01855e2, type: 2}
     - target: {fileID: -4216859302048453862, guid: 344722c219dca754bb6bb7e20400b139,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20476,6 +20472,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 39.56433
       objectReference: {fileID: 0}
+    - target: {fileID: -6434590018773005939, guid: 344722c219dca754bb6bb7e20400b139,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 37671574a6b19b540ae46576e01855e2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 344722c219dca754bb6bb7e20400b139, type: 3}
 --- !u!1 &1637915747
@@ -22067,12 +22068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionAction: 
   isPartOf_Scenario: 0
-  m_puzzleCube: {fileID: 1802177867}
-  m_puzzleCylinder: {fileID: 40599654}
   m_puzzle: {fileID: 1016302026}
-  m_ressources:
-  - {fileID: 1278447372}
-  - {fileID: 839796321}
 --- !u!1 &1773614304
 GameObject:
   m_ObjectHideFlags: 0

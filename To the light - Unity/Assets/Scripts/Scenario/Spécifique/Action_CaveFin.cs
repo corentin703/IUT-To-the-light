@@ -18,15 +18,17 @@ public class Action_CaveFin : Action_Scenario_Etape
 
     void Awake()
     {
-        m_caveKey.gameObject.GetComponent<Rigidbody>().useGravity = false;
+        m_caveKey.gameObject.SetActive(false);
         m_caveDoor.IsLocked = true;
         m_exitDoor.IsLocked = true;
     }
 
     public override void Update()
     {
-        if (!m_caveKey.gameObject.GetComponent<Rigidbody>().useGravity)
-            m_caveKey.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        //if (!m_caveKey.gameObject.GetComponent<Rigidbody>().useGravity)
+        //    m_caveKey.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        if (!m_caveKey.gameObject.activeSelf && !_MGR_Ressources.Instance.lRessources.Contains(m_caveKey))
+            m_caveKey.gameObject.SetActive(true);
 
         if (_MGR_Ressources.Instance.lRessources.Contains(m_caveKey))
             m_caveDoor.IsLocked = false;

@@ -48,7 +48,7 @@ public class Torche : Ressource
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && _MGR_Ressources.Instance.lRessources.Contains(this))
             IsTurnedOn = !IsTurnedOn;
     }
 
@@ -60,7 +60,7 @@ public class Torche : Ressource
         IsTurnedOn = true;
 
         gameObject.transform.parent = _MGR_GamePlay.Instance.player.GetComponentInChildren<Camera>().transform;
-        gameObject.transform.localPosition = new Vector3(1, -0.6f, 1.5f);
+        gameObject.transform.localPosition = new Vector3(1, -0.6f, 1.2f);
         gameObject.transform.localRotation = Quaternion.Euler(0, 90, 0);
     }
 
