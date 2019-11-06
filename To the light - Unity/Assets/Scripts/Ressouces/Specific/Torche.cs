@@ -55,6 +55,7 @@ public class Torche : Ressource
     protected override void PickAction()
     {
         Add();
+        _MGR_GamePlay.Instance.IncreaseScore(gameObject.tag);
         _MGR_Ressources.Instance.AddRessource(this);
         m_collider.enabled = false; // Pas besoin du collider quand la lampe se déplace avec l'utilisateur
         IsTurnedOn = true;

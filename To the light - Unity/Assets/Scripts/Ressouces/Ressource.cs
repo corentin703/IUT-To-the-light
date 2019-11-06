@@ -41,6 +41,7 @@ public abstract class Ressource : PickableObject, IScenarioInteractable
 
     protected override void PickAction()
     {
+        _MGR_GamePlay.Instance.IncreaseScore(gameObject.tag);
         Add(unitNumber);
         _MGR_Ressources.Instance.AddRessource(this);
         gameObject.SetActive(false);

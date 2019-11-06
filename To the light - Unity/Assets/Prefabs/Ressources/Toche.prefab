@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1576819920569868311}
   - component: {fileID: 2314202384333593682}
   - component: {fileID: 5423880517641961289}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Toche
-  m_TagString: Untagged
+  m_TagString: BonusCoin_50
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1576819920569868310}
   m_LocalRotation: {x: 0.05461582, y: -0.0041842423, z: 0.07627374, w: 0.9955812}
   m_LocalPosition: {x: 29.64, y: 10.92, z: 35.05}
-  m_LocalScale: {x: 14.635, y: 14.635, z: 14.635}
+  m_LocalScale: {x: 7.728522, y: 7.728522, z: 7.728522}
   m_Children:
   - {fileID: 5808317042748153016}
   - {fileID: 1576819921683794799}
@@ -105,8 +105,8 @@ Light:
   m_Enabled: 0
   serializedVersion: 9
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 10
+  m_Color: {r: 0.754717, g: 0.7312211, b: 0.6372375, a: 1}
+  m_Intensity: 2.5
   m_Range: 30
   m_SpotAngle: 82
   m_InnerSpotAngle: 21.80208
