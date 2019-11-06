@@ -8,7 +8,8 @@ public abstract class Ressource : PickableObject, IScenarioInteractable
     public string Description { get; protected set; }
     public virtual uint unitNumber { get; protected set; } = 1;
 
-    public static uint PickedNumber { get; protected set; } = 0;
+    //public static uint PickedNumber { get; protected set; } = 0;    
+    public abstract uint PickedNumber { get; protected set; }
 
     //[SerializeField]
     //public abstract Sprite resIcon { get; set; }

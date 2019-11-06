@@ -20,6 +20,8 @@ public class Knife : MonoBehaviour
     {
         gameObject.GetComponent<Rigidbody>().AddForce((negativeX) ? -1000f : 1000f, 0f, 0f);
         gameObject.GetComponent<Rigidbody>().useGravity = true;
+
+        HasBeenThrowed = true;
     }
 
     private void OnTriggerEnter(Collider Collision)

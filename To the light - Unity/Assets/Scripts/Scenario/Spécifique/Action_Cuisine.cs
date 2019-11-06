@@ -35,13 +35,13 @@ public class Action_Cuisine : Action_Scenario_Etape
             {
                 if ((_MGR_TimeLine.Instance.chrono - m_chrono) > 1.8f && !m_knife.HasBeenThrowed)
                 {
-                    if (m_knife.HasBeenThrowed)
-                        Declencher_Etape_Suivante_Du_Scenario();
-                    else
-                        m_knife.Throw();
+                    m_knife.Throw();
 
                     m_chrono = _MGR_TimeLine.Instance.chrono;
                 }
+
+                if (m_knife.HasBeenThrowed)
+                    Declencher_Etape_Suivante_Du_Scenario();
             }   
         }
     }

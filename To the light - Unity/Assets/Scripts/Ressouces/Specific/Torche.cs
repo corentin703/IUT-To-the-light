@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class Torche : Ressource
 {
+    private static uint m_pickedNumber = 0;
+    public override uint PickedNumber
+    {
+        get { return m_pickedNumber; }
+        protected set { m_pickedNumber = value; }
+    }
     public override void Add(uint num = 1)
     {
-        throw new System.Exception("Player can't have more than 1 lamp");
+        if (PickedNumber == 0)
+            PickedNumber = 1;
+        else
+            throw new System.Exception("Player can't have more than 1 lamp");
     }
 
     private bool m_isTurnedOn = false;
@@ -45,6 +54,7 @@ public class Torche : Ressource
 
     protected override void PickAction()
     {
+        Add();
         _MGR_Ressources.Instance.AddRessource(this);
         m_collider.enabled = false; // Pas besoin du collider quand la lampe se déplace avec l'utilisateur
         IsTurnedOn = true;
