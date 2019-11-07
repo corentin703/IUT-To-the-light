@@ -7411,11 +7411,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corps
       objectReference: {fileID: 0}
-    - target: {fileID: 5232488858435980449, guid: fb2ee58b6fe07ff418d88268b2567221,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fb2ee58b6fe07ff418d88268b2567221,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7470,6 +7465,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5232488858435980449, guid: fb2ee58b6fe07ff418d88268b2567221,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb2ee58b6fe07ff418d88268b2567221, type: 3}
@@ -7648,7 +7648,7 @@ Transform:
   - {fileID: 1980348411}
   - {fileID: 2045214436}
   m_Father: {fileID: 937684323}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &572527585
 PrefabInstance:
@@ -9505,6 +9505,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ensembleporte
       objectReference: {fileID: 0}
+    - target: {fileID: -8508212980618830706, guid: aff230b3e6cfca64e85e7c2e2039e8a3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45cae5f8f7328d54094b1a3ad245929c, type: 2}
     - target: {fileID: -4216859302048453862, guid: aff230b3e6cfca64e85e7c2e2039e8a3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9575,11 +9580,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.2092652
       objectReference: {fileID: 0}
-    - target: {fileID: -8508212980618830706, guid: aff230b3e6cfca64e85e7c2e2039e8a3,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 45cae5f8f7328d54094b1a3ad245929c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aff230b3e6cfca64e85e7c2e2039e8a3, type: 3}
 --- !u!1 &772158066
@@ -11334,10 +11334,10 @@ Transform:
   - {fileID: 646438697}
   - {fileID: 726896555}
   - {fileID: 1178171451038162631}
+  - {fileID: 561292066}
   - {fileID: 691061353}
   - {fileID: 1695682001}
   - {fileID: 1588747099}
-  - {fileID: 561292066}
   - {fileID: 1178171451624274748}
   - {fileID: 1294417159}
   - {fileID: 345381648}
@@ -18592,7 +18592,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703726899}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.814, y: 55.68, z: 3.606}
+  m_LocalPosition: {x: 1.782, y: 55.68, z: 3.606}
   m_LocalScale: {x: 0.01662449, y: 7.4362097, z: 0.5373081}
   m_Children: []
   m_Father: {fileID: 345381648}
@@ -23265,11 +23265,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knife
       objectReference: {fileID: 0}
-    - target: {fileID: 8032336168797909232, guid: dd5b8ca12067453499608c88fcb127e8,
-        type: 3}
-      propertyPath: negativeX
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2478398892132434141, guid: dd5b8ca12067453499608c88fcb127e8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23339,6 +23334,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 14.989623
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032336168797909232, guid: dd5b8ca12067453499608c88fcb127e8,
+        type: 3}
+      propertyPath: negativeX
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2478398892132434139, guid: dd5b8ca12067453499608c88fcb127e8,
         type: 3}
