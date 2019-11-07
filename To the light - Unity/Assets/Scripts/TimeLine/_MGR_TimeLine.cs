@@ -8,7 +8,7 @@ public class _MGR_TimeLine : MonoBehaviour {
     private static _MGR_TimeLine p_instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
     public static _MGR_TimeLine Instance { get { return p_instance; } }     // READ ONLY
 
-    public const float DURE_MAX_PAR_DEFAUT = 180; // temps maximum d'une partie (sans pause) par defaut , pour tests : 10 secondes ! 
+    public const float DURE_MAX_PAR_DEFAUT = 600; // temps maximum d'une partie (sans pause) par defaut , pour tests : 10 secondes ! 
     public float dureeMax { get; set; }     // temps maximum d'une partie (sans pause)
     private float p_debutApp;
     public float chrono { get; private set; }       // chrono partie
