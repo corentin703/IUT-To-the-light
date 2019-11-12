@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Canvas))]
+[RequireComponent(typeof(CanvasGroup))]
+[RequireComponent(typeof(Image))]
 public class Screamer : MonoBehaviour, Interface_TL_Events
 {
     public struct ScreamSprite
@@ -25,8 +28,7 @@ public class Screamer : MonoBehaviour, Interface_TL_Events
     private static List<Sprite> m_lSprites;
     private static bool m_isLastSprite = false;
 
-    //private static ScreamSprite[] m_tSprites;
-
+    private CanvasGroup m_canvasGroup;
     private Image m_image;
 
     public float DebutEventTL = 10;
@@ -43,22 +45,21 @@ public class Screamer : MonoBehaviour, Interface_TL_Events
                 throw new NotImplementedException();
 
             m_lSprites = new List<Sprite>(lSprites);
-
-            //m_lSprites = new ScreamSprite[lSprites.Count];
-
-            //for (int i = 0; i < lSprites.Count; ++i)
-            //    m_lSprites[i] = new ScreamSprite(lSprites[i]);
         }
                 
         m_image = this.gameObject.GetComponent<Image>();
 
-        m_image.enabled = false;
-        
+        //m_image.enabled = false;
+
+        m_canvasGroup = GetComponent<CanvasGroup>();
+        // Correctif pour le bogue où le screamer reste affiché
+        m_canvasGroup.alpha = 0f;
     }
 
     public void stop_TL_Event()
     {
-        m_image.enabled = false;
+        m_canvasGroup.alpha = 0f;
+        //m_image.enabled = false;
 
         _MGR_Son_Musique.Instance.PlaySound("Heart");
 
@@ -136,7 +137,8 @@ public class Screamer : MonoBehaviour, Interface_TL_Events
             }
         }
 
-        m_image.enabled = true;
+        m_canvasGroup.alpha = 1f;
+        //m_image.enabled = true;
         _MGR_Son_Musique.Instance.PlaySound("Screamer");
     }
 
