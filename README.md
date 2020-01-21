@@ -13,7 +13,11 @@ Le joueur devra résoudre des énigmes dans un temps imparti sous peine d’êtr
 - Faites Tab pour ouvrir l’inventaire
 - Faites Echap pour mettre sur pause
 
-Cf fichier [Solution.md](https://github.com/corentin703/To-the-light/blob/master/Solution.md) pour la solution du jeu pas à pas.
+Cf. fichier [Solution.md](https://github.com/corentin703/To-the-light/blob/master/Solution.md) pour la solution du jeu pas à pas.
+
+Nota. les captures d'écran ne sont volontairement pas fournies afin de ne pas spoiler1 le jeu.
+
+Ce projet est basé sur la version 2019.2.8f1
 
 ### Projet fait par : 
 - [Corentin VÉROT](https://github.com/corentin703)
